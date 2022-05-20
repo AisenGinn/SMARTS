@@ -28,7 +28,7 @@ setup(
         "eclipse-sumo==1.10.0",  # sumo
         "gym>=0.23.1",
         "numpy>=1.19.5",  # required for tf 2.4 below
-        "pandas>=1.4.2",  # only used by zoo/evaluation
+        "pandas>=1.3.4",  # only used by zoo/evaluation
         "psutil>=5.9.0",
         "pybullet==3.0.6",
         "rich==11.2.0",
