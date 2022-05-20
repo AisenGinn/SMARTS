@@ -25,7 +25,7 @@ if __name__ == "__main__":
         f"./{args.replay_data}/{args.scenarios[0].split('/')[-1]}/data_replay"
     )
     env = gym.make(
-        "smarts.env:hiway-v0",
+        "HiWay-v0",
         scenarios=args.scenarios,
         agent_specs={},
         headless=args.headless,

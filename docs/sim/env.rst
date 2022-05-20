@@ -22,7 +22,7 @@ See :class:`smarts.env.hiway_env` for more details.
 
     # make env
     env = gym.make(
-            "smarts.env:hiway-v0", # env entry name
+            "HiWay-v0", # env entry name
             scenarios=[scenario_path], # a list of paths to folders of scenarios
             agent_specs={AGENT_ID: agent_spec}, # dictionary of agents to interact with the environment
             headless=False, # headless mode. False to enable Envision visualization of the environment

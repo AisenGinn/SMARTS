@@ -145,7 +145,7 @@ We can run this agent with "scenarios/loop", one of the scenarios packaged with 
    )
 
    env = gym.make(
-       "smarts.env:hiway-v0",
+       "HiWay-v0",
        scenarios=["scenarios/loop"],
        agent_specs={AGENT_ID: agent_spec},
    )

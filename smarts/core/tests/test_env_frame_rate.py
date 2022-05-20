@@ -61,7 +61,7 @@ def env_and_spec(scenarios, seed, headless=True, max_episode_steps=None):
     )
 
     env = gym.make(
-        "smarts.env:hiway-v0",
+        "HiWay-v0",
         scenarios=scenarios,
         agent_specs={AGENT_ID: agent_spec},
         sim_name=None,

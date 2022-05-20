@@ -89,7 +89,7 @@ def _make_agent_specs(intrfcs):
 @pytest.fixture
 def make_env(request):
     env = gym.make(
-        "smarts.env:hiway-v0",
+        "HiWay-v0",
         scenarios=["scenarios/figure_eight"],
         agent_specs=_make_agent_specs(request.param),
         headless=True,

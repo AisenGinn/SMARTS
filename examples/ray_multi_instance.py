@@ -89,7 +89,7 @@ def train(
     )
 
     env = gym.make(
-        "smarts.env:hiway-v0",
+        "HiWay-v0",
         scenarios=training_scenarios,
         agent_specs={AGENT_ID: agent_spec},
         sim_name=sim_name,
@@ -140,7 +140,7 @@ def train(
 @ray.remote
 def evaluate(agent_spec, evaluation_scenarios, headless, seed):
     env = gym.make(
-        "smarts.env:hiway-v0",
+        "HiWay-v0",
         scenarios=evaluation_scenarios,  # we evaluate against the loop scenario
         agent_specs={AGENT_ID: agent_spec},
         headless=headless,

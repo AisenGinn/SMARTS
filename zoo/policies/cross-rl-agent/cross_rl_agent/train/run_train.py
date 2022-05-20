@@ -85,7 +85,7 @@ def train(
     )
 
     env = gym.make(
-        "smarts.env:hiway-v0",
+        "HiWay-v0",
         scenarios=training_scenarios,
         agent_specs={AGENT_ID: agent_spec},
         sim_name=sim_name,

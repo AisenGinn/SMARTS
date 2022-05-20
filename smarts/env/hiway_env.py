@@ -103,6 +103,8 @@ class HiWayEnv(gym.Env):
 
         self._log = logging.getLogger(self.__class__.__name__)
         self.seed(seed)
+        self.observation_space = None
+        self.action_space = None
 
         if timestep_sec and not fixed_timestep_sec:
             warnings.warn(

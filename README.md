@@ -32,7 +32,7 @@ agent_specs = {
 }
 
 env = gym.make(
-    "smarts.env:hiway-v0",
+    "HiWay-v0",
     scenarios=["scenarios/loop"],
     agent_specs=agent_specs,
 )
@@ -198,7 +198,7 @@ visdom
 Secondly, in a separate terminal, run SMARTS simulation. Enable Visdom in the environment by setting `visdom=True`. For example:
 ```python
 env = gym.make(
-    "smarts.env:hiway-v0",
+    "HiWay-v0",
     scenarios=["scenarios/loop"],
     agent_specs=agent_specs,
     visdom=True,

@@ -98,7 +98,7 @@ def env_and_spec(
         agent_builder=Policy,
     )
     env = gym.make(
-        "smarts.env:hiway-v0",
+        "HiWay-v0",
         scenarios=scenarios,
         agent_specs={agent_id: agent_spec},
         headless=True,

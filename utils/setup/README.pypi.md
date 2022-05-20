@@ -80,7 +80,7 @@ agent_specs = {
 }
 
 env = gym.make(
-    "smarts.env:hiway-v0",
+    "HiWay-v0",
     scenarios=["scenarios/loop"],
     agent_specs=agent_specs,
 )

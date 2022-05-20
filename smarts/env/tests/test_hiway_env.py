@@ -84,7 +84,7 @@ def agent_spec():
 @pytest.fixture
 def env(agent_spec):
     env = gym.make(
-        "smarts.env:hiway-v0",
+        "HiWay-v0",
         scenarios=["scenarios/loop"],
         agent_specs={AGENT_ID: agent_spec},
         headless=True,

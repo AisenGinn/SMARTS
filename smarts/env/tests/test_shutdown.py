@@ -34,7 +34,7 @@ AGENT_ID = "AGENT-007"
 
 def build_env(agent_spec):
     return gym.make(
-        "smarts.env:hiway-v0",
+        "HiWay-v0",
         # TODO: Switch to a test scenario that has routes, and missions
         scenarios=["scenarios/loop"],
         agent_specs={AGENT_ID: agent_spec},

@@ -26,15 +26,15 @@ setup(
         "cached-property>=1.5.2",
         "click==8.0.4",  # used in scl
         "eclipse-sumo==1.10.0",  # sumo
-        "gym==0.19.0",
+        "gym>=0.23.1",
         "numpy>=1.19.5",  # required for tf 2.4 below
-        "pandas>=1.3.4",  # only used by zoo/evaluation
-        "psutil>=5.8.0",
+        "pandas>=1.4.2",  # only used by zoo/evaluation
+        "psutil>=5.9.0",
         "pybullet==3.0.6",
-        "rich>=11.2.0",
-        "Rtree>=0.9.7",
+        "rich==11.2.0",
+        "Rtree>=1.0.0",
         "sh>=1.14.2",
-        "shapely>=1.8.1",
+        "shapely>=1.8.2",
         "tableprint>=0.9.1",
         "trimesh==3.9.29",  # Used for writing .glb files
         "visdom>=0.1.8.9",
@@ -48,12 +48,12 @@ setup(
         # The following is used for imitation learning and envision
         "ijson>=3.1.4",
         # The following are for the /smarts/algorithms
-        "matplotlib>=3.4.3",
+        "matplotlib>=3.5.2",
         # The following are for /smarts/zoo and remote agents
         "grpcio==1.32.0",
         "protobuf>=3.19.1",
         "PyYAML>=6.0",
-        "twisted>=21.7.0",
+        "twisted>=22.4.0",
     ],
     extras_require={
         "camera-obs": ["Panda3D==1.10.9", "panda3d-gltf==0.13"],
@@ -62,7 +62,7 @@ setup(
             "grpcio-tools==1.32.0",
             "isort==5.7.0",
             "pre-commit==2.16.0",
-            "pylint>=2.12.2",
+            "pylint==2.10.2",
             "pytype==2022.1.13",
         ],
         "doc": [
@@ -70,7 +70,7 @@ setup(
             "sphinx-rtd-theme>=1.0.0",
             "sphinxcontrib-apidoc>=0.3.0",
         ],
-        "extras": ["pynput>=1.7.4"],  # Used by HumanKeyboardAgent
+        "extras": ["pynput>=1.7.6"],  # Used by HumanKeyboardAgent
         "rllib": [
             "opencv-python==4.1.2.30",
             "opencv-python-headless==4.1.2.30",
@@ -92,7 +92,7 @@ setup(
             "torchvision==0.5.0",
         ],
         "train": [
-            "tensorflow>=2.4.0",
+            "tensorflow==2.4.0",
         ],
         "waymo": ["waymo-open-dataset-tf-2-4-0"],
         "opendrive": ["opendrive2lanelet>=1.2.1"],

@@ -42,7 +42,7 @@ In your `run.py` script, enable `visdom` with,
 .. code-block:: python
 
     env = gym.make(
-            "smarts.env:hiway-v0", # env entry name
+            "HiWay-v0", # env entry name
             ...
             visdom=True, # whether or not to enable visdom visualization (see Appendix).
             ...

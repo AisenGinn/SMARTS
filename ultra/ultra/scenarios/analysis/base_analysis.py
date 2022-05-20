@@ -295,7 +295,7 @@ class BaseAnalysis:
         agent_id = "AGENT_007"
         ego_less = False if ego else True
         env = gym.make(
-            "smarts.env:hiway-v0",
+            "HiWay-v0",
             scenarios=scenarios,
             agent_specs={agent_id: agent_spec},
             headless=True,

@@ -34,7 +34,7 @@ if __name__ == "__main__":
     agent_specs = import_agent_specs_from(args.scenarios[0])
 
     env = gym.make(
-        "smarts.env:hiway-v0",
+        "HiWay-v0",
         scenarios=args.scenarios,
         agent_specs=agent_specs,
         headless=args.headless,

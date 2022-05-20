@@ -73,7 +73,7 @@ def main(scenarios, sim_name, headless, seed, speed, max_steps, save_dir, write)
     copy_scenarios(save_dir, scenarios)
 
     env = gym.make(
-        "smarts.env:hiway-v0",
+        "HiWay-v0",
         scenarios=scenarios,
         agent_specs={AGENT_ID: agent_spec},
         sim_name=sim_name,

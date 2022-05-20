@@ -28,6 +28,7 @@ import importlib_resources
 import pytest
 import pytest_notebook.nb_regression as nb
 
+import smarts.env
 from smarts.core.agent import Agent
 from smarts.core.agent_interface import AgentInterface, AgentType
 from smarts.core.sensors import Observation
@@ -61,7 +62,7 @@ def run_scenario(
     )
 
     env = gym.make(
-        "smarts.env:hiway-v0",
+        "HiWay-v0",
         scenarios=scenarios,
         agent_specs={AGENT_ID: agent_spec},
         sim_name=sim_name,

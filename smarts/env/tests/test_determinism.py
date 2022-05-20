@@ -56,7 +56,7 @@ def agent_spec(max_steps_per_episode):
 def run(agent_spec, callback, scenarios, episode_count, capture_step):
     AGENT_ID = "Agent-007"
     env = gym.make(
-        "smarts.env:hiway-v0",
+        "HiWay-v0",
         scenarios=[scenarios],
         agent_specs={AGENT_ID: agent_spec},
         headless=True,

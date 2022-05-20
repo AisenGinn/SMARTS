@@ -21,7 +21,7 @@
 from gym.envs.registration import register
 
 register(
-    id="hiway-v0",
+    id="HiWay-v0",
     entry_point="smarts.env.hiway_env:HiWayEnv",
 )
 
@@ -31,6 +31,6 @@ register(
 )
 
 register(
-    id="merge-v0",
+    id="Merge-v0",
     entry_point="smarts.env.merge_env:merge_env",
 )

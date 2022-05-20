@@ -71,7 +71,7 @@ def _make_agent_specs(num_agent):
 def base_env(request):
     agent_specs, obs_space = _make_agent_specs(request.param)
     env = gym.make(
-        "smarts.env:hiway-v0",
+        "HiWay-v0",
         scenarios=["scenarios/figure_eight"],
         agent_specs=agent_specs,
         headless=True,
