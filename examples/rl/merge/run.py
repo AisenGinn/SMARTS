@@ -4,6 +4,7 @@ import warnings
 import tensorflow as tf
 
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
 
 import argparse
 import logging

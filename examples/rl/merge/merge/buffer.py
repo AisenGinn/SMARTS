@@ -2,16 +2,16 @@ from typing import Dict
 
 # import reverb
 from tf_agents.agents import tf_agent
+from tf_agents.replay_buffers import (
+    tf_uniform_replay_buffer,
+)
+from tf_agents.environments import tf_py_environment
+# from tf_agents.specs import tensor_spec
 # from tf_agents.replay_buffers import (
 #     py_hashed_replay_buffer,
 #     reverb_replay_buffer,
 #     reverb_utils,
 # )
-from tf_agents.replay_buffers import (
-    tf_uniform_replay_buffer,
-)
-# from tf_agents.specs import tensor_spec
-from tf_agents.environments import tf_py_environment
 
 def uniform_replay(env: tf_py_environment.TFPyEnvironment, agent: tf_agent.TFAgent, config: Dict):
     replay_buffer = tf_uniform_replay_buffer.TFUniformReplayBuffer(

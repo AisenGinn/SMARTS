@@ -1,6 +1,5 @@
 import tensorflow as tf
 from tf_agents.agents.dqn.dqn_agent import DqnAgent
-from tf_agents.utils import common
 
 
 def dqn(env, network, config):
