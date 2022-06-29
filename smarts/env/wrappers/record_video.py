@@ -35,7 +35,8 @@ from typing import Callable
 
 import gym
 from gym import logger
-from gym.wrappers.monitoring import video_recorder
+import py
+from smarts.env.wrappers import video_recorder_moviepy
 
 
 def capped_cubic_video_schedule(episode_id):
@@ -102,7 +103,7 @@ class RecordVideo(gym.Wrapper):
             video_name = f"{self.name_prefix}-episode-{self.episode_id}"
 
         base_path = os.path.join(self.video_folder, video_name)
-        self.video_recorder = video_recorder.VideoRecorder(
+        self.video_recorder = video_recorder_moviepy.VideoRecorder(
             env=self.env,
             base_path=base_path,
             metadata={"step_id": self.step_id, "episode_id": self.episode_id},
