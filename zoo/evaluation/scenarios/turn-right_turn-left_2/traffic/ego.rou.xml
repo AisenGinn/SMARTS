@@ -10,4 +10,8 @@
 
   <vehicle id="npc_turn_left" type="npc" depart="0" departLane="2" arrivalLane="1" departPos="500" arrivalPos='max' route="turn_left" color="255,255,0"/>
 
+<<<<<<< HEAD
 </routes>
+=======
+</routes>
+>>>>>>> c894a683ba637a57f74d918135d05109f89f5193
