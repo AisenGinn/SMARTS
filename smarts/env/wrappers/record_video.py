@@ -35,7 +35,6 @@ from typing import Callable
 
 import gym
 from gym import logger
-import py
 from smarts.env.wrappers import video_recorder_moviepy
 
 
