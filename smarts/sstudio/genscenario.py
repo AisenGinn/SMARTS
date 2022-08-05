@@ -389,10 +389,23 @@ def _gen_missions(
 
     _validate_missions(missions)
 
-    missions = [
-        types._ActorAndMission(actor=actor, mission=resolve_mission(mission))
-        for actor, mission in itertools.product(actors, missions)
-    ]
+    # missions = [
+    #    types._ActorAndMission(actor=actor, mission=resolve_mission(mission))
+    #    for actor, mission in itertools.product(actors, missions)
+    # ]
+    temp_missions = missions
+    for actor, mission in itertools.product(actors, temp_missions):
+        if (
+            (actor.mission_name == mission.mission_name)
+            or (actor.mission_name is None and mission.mission_name is None)
+            or (actor.mission_name is None and mission.mission_name is not None)
+        ):
+            missions.append(
+                types._ActorAndMission(actor=actor, mission=resolve_mission(mission))
+            )
+        else:
+            continue
+
     with open(output_path, "wb") as f:
         pickle.dump(missions, f)
 

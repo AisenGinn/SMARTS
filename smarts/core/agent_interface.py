@@ -273,6 +273,11 @@ class AgentInterface:
     The choice of action space; this also decides the controller that will be enabled and the chassis type that will be used.
     """
 
+    mission_name = Optional[str] = None
+    """
+    The name of the mission that the agent is going to perform
+    """
+
     vehicle_type: str = "sedan"
     """
     The choice of vehicle type.

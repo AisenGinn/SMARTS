@@ -268,6 +268,9 @@ class TrafficActor(Actor):
     )
     junction_model: JunctionModel = field(default_factory=JunctionModel, hash=False)
 
+    mission_name = Optional[str] = None
+    """The name of the mission that the actor is going to perform"""
+
     def __hash__(self) -> int:
         return _pickle_hash(self)
 
@@ -299,6 +302,8 @@ class SocialAgentActor(Actor):
     """
     initial_speed: Optional[float] = None
     """Set the initial speed, defaults to 0."""
+    mission_name = Optional[str] = None
+    """The name of the mission that the actor is going to perform"""
 
 
 @dataclass(frozen=True)
@@ -313,6 +318,8 @@ class BoidAgentActor(SocialAgentActor):
     # honored when using a bubble for boid dynamic assignment.
     capacity: "BubbleLimits" = None
     """The capacity of the boid agent to take over vehicles."""
+    mission_name = Optional[str] = None
+    """The name of the mission that the actor is going to perform"""
 
 
 # A MapBuilder should return an object derived from the RoadMap base class
@@ -544,6 +551,9 @@ class Mission:
 
     route: Union[RandomRoute, Route]
     """The route for the actor to attempt to follow."""
+
+    mission_name: Optional[str] = None
+    """The unique id for this mission"""
 
     via: Tuple[Via, ...] = ()
     """Points on an road that an actor must pass through"""
