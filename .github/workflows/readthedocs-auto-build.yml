@@ -1,0 +1,22 @@
+name: readthedocs-auto-build
+
+on: 
+  schedule:
+    - cron: '0 23 * * 1'
+      # Runs at 11.00pm, UTC, every Monday
+  push:
+    branches:
+      - readthedocs
+  release:
+    branches:
+      - readthedocs
+  merge_group:
+    branches:
+      - readthedocs
+
+jobs:
+  readthedocs-auto-build:
+    steps:
+     - name: build_docs
+       run: |
+       curl -X POST -d "branches=readthedocs" -d "token=${{ secrets.RTDS_WEBHOOK_TOKEN }}" ${{ secrets.RTDS_WEBHOOK_URL }}
