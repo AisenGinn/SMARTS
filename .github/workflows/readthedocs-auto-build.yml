@@ -18,5 +18,8 @@ jobs:
   readthedocs-auto-build:
     steps:
      - name: build_docs
-       run: |
-       curl -X POST -d "branches=readthedocs" -d "token=${{ secrets.RTDS_WEBHOOK_TOKEN }}" ${{ secrets.RTDS_WEBHOOK_URL }}
+       uses: dfm/rtds-action@v1
+       with:
+          webhook_url: ${{ secrets.RTDS_WEBHOOK_URL }}
+          webhook_token: ${{ secrets.RTDS_WEBHOOK_TOKEN }}
+          commit_ref: ${{ github.ref }}
