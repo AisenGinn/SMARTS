@@ -21,4 +21,4 @@ jobs:
     steps:
      - name: build_docs
        run: |
-       curl -X POST -d "branches=readthedocs" -d "token=${{ secrets.RTDS_WEBHOOK_TOKEN }}" ${{ secrets.RTDS_WEBHOOK_URL }}
+       curl -X POST -d "branches=readthedocs" -d "token=49d4cffb2612080723457da836c3bb29503c83e2" https://readthedocs.org/api/v2/webhook/smarts-readthedocs/212767/
