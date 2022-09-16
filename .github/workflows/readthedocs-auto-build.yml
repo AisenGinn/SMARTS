@@ -19,7 +19,8 @@ env:
 
 jobs:
   readthedocs-auto-build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
+    container: huaweinoah/smarts:v0.4.18-minimal
     steps:
      - name: build_docs
        run: |
@@ -27,5 +28,4 @@ jobs:
         python3.7 -m venv ${{env.venv_dir}}
         . ${{env.venv_dir}}/bin/activate
         pip install --upgrade pip
-        pip install curl
         curl -X POST -d "branches=readthedocs" -d "token=${{ secrets.RTDS_WEBHOOK_TOKEN }}" ${{ secrets.RTDS_WEBHOOK_URL }}
