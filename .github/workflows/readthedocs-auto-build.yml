@@ -28,5 +28,6 @@ jobs:
         python3.7 -m venv ${{env.venv_dir}}
         . ${{env.venv_dir}}/bin/activate
         pip install --upgrade pip
-        pip install pycurl
+        apt-get update
+        apt-get install curl
         curl -X POST -d "branches=readthedocs" -d "token=${{ secrets.RTDS_WEBHOOK_TOKEN }}" ${{ secrets.RTDS_WEBHOOK_URL }}
