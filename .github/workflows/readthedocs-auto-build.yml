@@ -21,4 +21,5 @@ jobs:
     steps:
      - name: build_docs
        run: |
+        pip install curl
         curl -X POST -d "branches=readthedocs" -d "token=${{ secrets.RTDS_WEBHOOK_TOKEN }}" ${{ secrets.RTDS_WEBHOOK_URL }}
