@@ -20,7 +20,6 @@ env:
 jobs:
   readthedocs-auto-build:
     runs-on: ubuntu-18.04
-    container: huaweinoah/smarts:v0.4.18-minimal
     steps:
      - name: build_docs
        run: |
