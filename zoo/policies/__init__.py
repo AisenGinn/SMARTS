@@ -1,3 +1,6 @@
+import os
+import sys
+from pathlib import Path
 from typing import Any, Dict
 
 from smarts.core.agent_interface import AgentInterface, AgentType
@@ -100,3 +103,37 @@ def human_keyboard_entrypoint(*arg, **kwargs):
 
 
 register(locator="human-in-the-loop-v0", entry_point=human_keyboard_entrypoint)
+
+
+from smarts.env.multi_scenario_env import resolve_agent_interface
+
+def load_config(path):
+    import yaml
+
+    config = None
+    if path.exists():
+        with open(path, "r") as file:
+            config = yaml.safe_load(file)
+    return config
+
+root_path = str(Path(__file__).absolute().parents[2])
+config = load_config(Path(os.path.join(root_path, "competition/track1/submission/config.yaml")))
+
+def compitition_entry(**kwargs):
+    policy_path = None
+    for arg in kwargs:
+        if(arg == "policy_path"):
+            policy_path = kwargs[arg]
+    from .competition_agent import CompetitionAgent
+
+    spec = AgentSpec(
+        interface=resolve_agent_interface(img_meters=int(config["img_meters"]), img_pixels=int(config["img_pixels"]), action_space="TargetPose"),
+        agent_params={
+            "policy_path": policy_path,
+        },
+        agent_builder=CompetitionAgent,
+    )
+
+    return spec
+
+register("competition_agent-v0", entry_point=compitition_entry, policy_path = os.path.join(root_path, "competition/track1/submission"))
