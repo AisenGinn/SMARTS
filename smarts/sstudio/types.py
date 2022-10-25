@@ -813,6 +813,7 @@ class PositionalZone(Zone):
             poly = shapely_rotate(poly, self.rotation, use_radians=True)
         return shapely_translate(poly, xoff=x, yoff=y)
 
+
 @dataclass(frozen=True)
 class ConfigurableZone(Zone):
     """A descripter that defines a specific configurableZone defined by user"""
@@ -922,7 +923,7 @@ class Bubble:
             raise ValueError(
                 "Only boids can have keep_alive enabled (for persistent boids)"
             )
-        
+
         poly = None
         if not isinstance(self.zone, MapZone):
             poly = self.zone.to_geometry(road_map=None)
