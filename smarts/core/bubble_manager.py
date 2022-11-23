@@ -605,6 +605,14 @@ class BubbleManager:
         """When airlocked. The social agent will receive observations and execute
         its policy, however it won't actually operate the vehicle's controller.
         """
+        pedestrian_list = [
+            vehicle[0]
+            for vehicle in sim.vehicle_index.vehicleitems()
+            if vehicle[1]._vehicle_config_type == "pedestrian"
+        ]
+        if vehicle_id in pedestrian_list:
+            return
+
         self._log.debug(
             f"Airlocked vehicle={vehicle_id} with actor={social_agent_actor}"
         )
@@ -648,6 +656,14 @@ class BubbleManager:
         "greatest common denominator" state; that is: what's available via the vehicle
         front-end common to both source and destination policies during airlock.
         """
+        pedestrian_list = [
+            vehicle[0]
+            for vehicle in sim.vehicle_index.vehicleitems()
+            if vehicle[1]._vehicle_config_type == "pedestrian"
+        ]
+        if vehicle_id in pedestrian_list:
+            return
+
         self._log.debug(f"Hijack vehicle={vehicle_id} with actor={social_agent_actor}")
         if bubble.is_boid:
             agent_id = BubbleManager._make_boid_social_agent_id(social_agent_actor)
